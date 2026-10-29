@@ -1,7 +1,15 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: myapp
+
+#kubectl create ns myapp
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mynginx
+  namespace: myapp
   # annotations:
   #   kubernetes.io/change-cause: "Updating replica count to 6"
 spec:
